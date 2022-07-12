@@ -1,16 +1,25 @@
+import { useAddress } from '@thirdweb-dev/react';
+
 const styles = {
-    wrapper: 'flex min-h-screen items-center justify-center bg-[#1d1d1d] text-gray-200',
-    button: 'rounded-xl border px-10 py-5',
-}
+  button:
+    "rounded-full border-2 py-3 px-8 uppercase font-['MonumentExtended'] mt-8 text-xl tracking-widest",
+};
 
-const Login = ({ login }) => {
-    return (
-        <div className={styles.wrapper}>
-            <button className={styles.button} onClick={login}>
-                Connect with Metamask
-            </button>
-        </div>
-    )
-}
+const Login = ({ login, mintNFT }) => {
+  const address = useAddress();
+  return (
+    <>
+      {address ? (
+        <button className={styles.button} onClick={mintNFT}>
+          Mint Your NFT
+        </button>
+      ) : (
+        <button className={styles.button} onClick={login}>
+          Connect Wallet
+        </button>
+      )}
+    </>
+  );
+};
 
-export default Login
+export default Login;

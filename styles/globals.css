@@ -3,27 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "PlexMono";
+    src: url("../assets/fonts/PlexMono/IBMPlexMono-Regular.ttf");
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "MonumentExtended";
+    src: url("../assets/fonts/MonumentExtended/MonumentExtended-Regular.otf");
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "MonumentExtended";
+    src: url("../assets/fonts/MonumentExtended/MonumentExtended-Ultrabold.otf");
+    font-weight: bold;
+  }
+
   html {
-    font-family: 'Nunito';
-  }
-}
-
-.bg-animate {
-  background: linear-gradient(-45deg, #0242a5, #c904f1, #fe3137);
-  background-size: 400% 400%;
-  animation: change 5s ease-in-out infinite;
-}
-
-@keyframes change {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
+    font-family: "PlexMono";
+    background: url(/images/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
   }
 }
