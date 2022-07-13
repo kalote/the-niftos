@@ -12,7 +12,7 @@ const styles = {
   heroTwitter: 'mt-8',
 };
 
-const Hero = ({ mintNFT, totalSupply, nftPrice, connectWithMetamask }) => {
+const Hero = ({ mintNFT, totalSupply, claimedSupply, nftPrice, connectWithMetamask }) => {
   //   const timelines = claimPhases.map(phase => {
   //     const now = new Date().getTime();
   //     const hasPast = now > phase.startTime;
@@ -38,7 +38,7 @@ const Hero = ({ mintNFT, totalSupply, nftPrice, connectWithMetamask }) => {
         </p>
         <p className={styles.heroCatchphrase}>Niftos ‘Alphas’ now minting</p>
         <p className={styles.heroSub}>
-          Total Supply: {totalSupply} | Price: {nftPrice} Eth
+          {claimedSupply} / {totalSupply} claimed | Price: {nftPrice} Eth
         </p>
 
         <Login login={connectWithMetamask} mintNFT={mintNFT} />

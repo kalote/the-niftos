@@ -47,12 +47,7 @@ node_modules/
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 
-integration-test/keys.json
-storage
 .DS_STORE
 .vscode
-.idea
-.editorconfig
-storage
-dist
 .next
+batch-upload
