@@ -32,25 +32,23 @@ const Home = () => {
   const [claimedSupply, setClaimedSupply] = useState(0);
   const [nftPrice, setNFTPrice] = useState(0);
 
+  const getNFTDropDetails = async () => {
+    setLoading(true);
+    try {
+      const { claimedSupply, totalSupply, nftPrice } = await fetcher.get('/api/get-nft-drop');
+      setTotalSupply(totalSupply);
+      setClaimedSupply(claimedSupply);
+      setNFTPrice(nftPrice);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    if (!address) return;
-
-    const getNFTDropDetails = async () => {
-      setLoading(true);
-      try {
-        const { claimedSupply, totalSupply, nftPrice } = await fetcher.get('/api/get-nft-drop');
-        setTotalSupply(totalSupply);
-        setClaimedSupply(claimedSupply);
-        setNFTPrice(nftPrice);
-      } catch (error) {
-        console.log(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
     getNFTDropDetails();
-  }, [address]);
+  }, []);
 
   const mintNFT = async () => {
     if (!nftDrop) return;
