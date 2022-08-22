@@ -1,7 +1,7 @@
 #!/bin/bash
 
 current=$(pwd)
-jsonFolder="${current}/batch-upload/raw"
+jsonFolder="${current}/batch-upload/final"
 jsonArray=$(find ${jsonFolder} -type f -name '*.json')
 outputfile="$current/output.json" 
 echo "[" > $outputfile
